@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     let api = "https://api.giphy.com/v1/gifs/search?";
     let apiKey = "&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F";
@@ -18,7 +18,7 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET",
 
-        }).then(function(giphy) {
+        }).then(function (giphy) {
 
             for (let i = 0; i < giphy.data.length; i++) {
 
@@ -30,9 +30,9 @@ $(document).ready(function(){
                 catImg.attr("data-still", imgURL);
                 catImg.attr("data-animate", imgPlayURL);
                 catImg.attr("data-state", "still");
-                catImg.attr("class", "gif");
                 catImg.attr("alt", "Cats");
-
+                
+                catImg.addClass("gif");
                 $("#images").prepend(catImg);
             };
 
