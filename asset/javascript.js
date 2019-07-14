@@ -1,13 +1,5 @@
 $(document).ready(() => {
 
-    let api = "https://api.giphy.com/v1/gifs/search?";
-    let apiKey = "&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F";
-    let query = "&q=smile cat";
-    let limit = "&limit-10";
-    let rating = "&rating=g";
-    let topics = ["cats", "playing cats", "fighting cats", "eating cats", "sleeping cats", "poopoo cats", "baby kitten", "wild cats", "cat walk", "jumping cats"]
-
-
 
     $("#cats").on("click", (function(){
         $("#images").empty();
@@ -86,7 +78,8 @@ $(document).ready(() => {
                 topicImg.attr("data-still", imgURL);
                 topicImg.attr("data-animate", imgPlayURL);
                 topicImg.attr("data-state", "still");
-                topicImg.attr("alt", "Cats");
+                topicImg.attr("id", "images")
+
 
                 topicImg.addClass("gif");
                 $("#images").prepend(topicImg);
