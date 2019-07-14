@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
     let api = "https://api.giphy.com/v1/gifs/search?";
     let apiKey = "&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F";
@@ -9,36 +9,90 @@ $(document).ready(function () {
 
 
 
-    $("#cats").on("click", (() => {
+    $("#cats").on("click", (function(){
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=cats%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
 
-        let queryURL = "http://api.giphy.com/v1/gifs/search?q=cats%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=10&action&rating=g";
+    $("#garfield").on("click", (function(){
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=garfield%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
 
+    $("#pikachu").on("click", (function(){
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=pikachu%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#tiger").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=tiger%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#thunderstorm").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=thunderstorm%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#jumping").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=jumping%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#dancing").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=dancing%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#tornado").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=tornado%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#aircraft").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=airplane+landing%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+
+    $("#driving").on("click", (function () {
+        $("#images").empty();
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=driving+accident%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        displayGIF(queryURL);
+    }));
+    
+
+
+    function displayGIF(topic) {
+        let queryURL = topic;
         $.ajax({
-
             url: queryURL,
             method: "GET",
-
-        }).then(function (giphy) {
+        }).then((giphy) => {
 
             for (let i = 0; i < giphy.data.length; i++) {
-
                 let imgPlayURL = giphy.data[i].images.fixed_width.url;
                 let imgURL = giphy.data[i].images.fixed_width_still.url;
-                let catImg = $("<img>");
+                let topicImg = $("<img>");
+                topicImg.attr("src", imgURL);
+                topicImg.attr("data-still", imgURL);
+                topicImg.attr("data-animate", imgPlayURL);
+                topicImg.attr("data-state", "still");
+                topicImg.attr("alt", "Cats");
 
-                catImg.attr("src", imgURL);
-                catImg.attr("data-still", imgURL);
-                catImg.attr("data-animate", imgPlayURL);
-                catImg.attr("data-state", "still");
-                catImg.attr("alt", "Cats");
-                
-                catImg.addClass("gif");
-                $("#images").prepend(catImg);
+                topicImg.addClass("gif");
+                $("#images").prepend(topicImg);
             };
 
-
             $(".gif").on("click", function () {
-
                 let state = $(this).attr("data-state");
                 if (state === "still") {
                     $(this).attr("src", $(this).attr("data-animate"));
@@ -48,11 +102,9 @@ $(document).ready(function () {
                     $(this).attr("data-state", "still");
                 }
             });
-
-
         });
+    }
 
 
-    }));
 
 })
