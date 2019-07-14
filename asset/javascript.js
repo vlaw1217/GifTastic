@@ -1,19 +1,19 @@
 $(document).ready(() => {
 
 
-    $("#cats").on("click", (function(){
+    $("#cats").on("click", (function () {
         $("#images").empty();
         let queryURL = "http://api.giphy.com/v1/gifs/search?q=cats%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
         displayGIF(queryURL);
     }));
 
-    $("#garfield").on("click", (function(){
+    $("#garfield").on("click", (function () {
         $("#images").empty();
         let queryURL = "http://api.giphy.com/v1/gifs/search?q=garfield%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
         displayGIF(queryURL);
     }));
 
-    $("#pikachu").on("click", (function(){
+    $("#pikachu").on("click", (function () {
         $("#images").empty();
         let queryURL = "http://api.giphy.com/v1/gifs/search?q=cartoon+pikachu%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
         displayGIF(queryURL);
@@ -60,7 +60,65 @@ $(document).ready(() => {
         let queryURL = "http://api.giphy.com/v1/gifs/search?q=driving+accident%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
         displayGIF(queryURL);
     }));
-    
+
+    $("#topicList").bind('change', function () {
+        switch ($('#topicList').val()) {
+            case "Cats":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=cats%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Garfield":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=garfield%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Pikachu":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=cartoon+pikachu%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Tigers":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=tiger%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Thunderstorm":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=thunderstorm%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Jumpings":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=jumping%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Dancing":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=dancing%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Tornados":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=tornado%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Airplane Landings":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=airplane%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            case "Driving Accidents":
+                $("#images").empty();
+                queryURL = "http://api.giphy.com/v1/gifs/search?q=driving+accident%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+                displayGIF(queryURL);
+                break;
+            default:
+                alert('fuck');
+
+        }
+    });
+
 
     function displayGIF(topic) {
         let queryURL = topic;
