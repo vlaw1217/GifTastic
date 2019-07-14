@@ -37,20 +37,36 @@
 
             <button id="driving">Driving Accidents</button>
 
-            <form class="navbar-form navbar-left" action="/action_page.php">
+
+
+           <form class="navbar-form navbar-left" action="/action_page.php">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search">
+                <input type="text" name="city" placeholder = "search" list="topics">
+                <datalist id="topics">
+                    <option value="Cats">
+                    <option value="Garfield">
+                    <option value="Pikachu">
+                    <option value="Tigers">
+                    <option value="Thunderstorm">
+                    <option value="Jumpings">
+                    <option value="Dancing">
+                    <option value="Airplane Landings">
+                    <option value="Driving Accidents">
+                </datalist>
+                   
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                         </button>
                     </div>
                 </div>
             </form>
+            
 
-
+<div class="container">
+   
             <div id="images"></div>
-
-            </ul>
+   
+</div>
         </div>
     </nav>
 
