@@ -15,7 +15,7 @@ $(document).ready(() => {
 
     $("#pikachu").on("click", (function(){
         $("#images").empty();
-        let queryURL = "http://api.giphy.com/v1/gifs/search?q=pikachu%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=cartoon+pikachu%22&api_key=JjKJIuZ3TirvGEdcKy2gaMVWXTNnjv2F&limit=12&action&rating=g";
         displayGIF(queryURL);
     }));
 
@@ -61,7 +61,6 @@ $(document).ready(() => {
         displayGIF(queryURL);
     }));
     
-
 
     function displayGIF(topic) {
         let queryURL = topic;
