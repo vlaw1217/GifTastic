@@ -116,7 +116,7 @@ $(document).ready(() => {
             default:
                 location.reload();
                 break;
-        }
+        };
         $("#topicList").val('');
     });
 
@@ -151,11 +151,11 @@ $(document).ready(() => {
                 } else {
                     $(this).attr("src", $(this).attr("data-still"));
                     $(this).attr("data-state", "still");
-                }
+                };
             });
         });
-    }
+    };
 
 
 
-})
+});

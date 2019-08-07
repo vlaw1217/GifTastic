@@ -3,17 +3,37 @@
 
 }
 body{
-    background-color: white;
+    /*background-image: url("images/gifbackground.jpg")*/
+    
+     background-image: url("images/comic1.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+   /* background-color: white;*/
+}
+
+nav {
+    margin-top: 30px;
 }
 
 button{
     background-color: black;
     color: white;
     font-size: 20px; 
+    box-shadow: 2px 2px 2px powderblue; 
+}
+p {
+    color: orange;
+    text-shadow: 3px 3px 3px rgb(165, 204, 86);
+    font-size: 50px;                       
+    padding-top:150px;
+}
+button:hover{
+background-color: darkolivegreen;
 }
 
 #images{
     padding: 20px;
+   
 }
 
 
